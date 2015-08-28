@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "Playground.Web02"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Data Source=(local);Initial Catalog=aspnet5-Playground-Web02;Integrated Security=True"
+    }
+  }
+}

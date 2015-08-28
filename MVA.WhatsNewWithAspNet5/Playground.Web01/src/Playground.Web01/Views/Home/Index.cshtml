@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNet.Http
+@model TodoItemViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1>Todo Item</h1>
+<form asp-controller="Home" asp-action="Index" method="post" role="form">
+    <div asp-validation-summary="ValidationSummary.All"></div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label asp-for="Done"></label>
+        <input asp-for="Done" />
+        <span asp-validation-for="Done"></span>
+    </div>
+    <div>
+        <label asp-for="CreationDate"></label>
+        <input asp-for="CreationDate" />
+        <span asp-validation-for="CreationDate"></span>
+    </div>
+    <div>
+        <button type="submit">Send</button>
+    </div>
+
+</form>

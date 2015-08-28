@@ -1,0 +1,21 @@
+{
+    "version": "1.0.0-*",
+    "description": "Playground.Web01.Domain Class Library",
+    "authors": [ "joaquinc" ],
+    "tags": [ "" ],
+    "projectUrl": "",
+    "licenseUrl": "",
+
+    "dependencies": {
+        "Microsoft.CSharp": "4.0.0-beta-23019",
+        "System.Collections": "4.0.10-beta-23019",
+        "System.Linq": "4.0.0-beta-23019",
+        "System.Runtime": "4.0.20-beta-23019",
+        "System.Threading": "4.0.10-beta-23019",
+        "Microsoft.CodeAnalysis.CSharp": "1.1.0-beta1-20150812-01"
+    },
+
+    "frameworks": {
+        "dotnet": { }
+    }
+}
