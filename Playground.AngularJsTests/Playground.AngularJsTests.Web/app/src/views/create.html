@@ -1,0 +1,22 @@
+﻿<div ng-controller="expenseCreateController as vm">
+    <form name="specForm" ng-submit="vm.addExpense()" novalidate style="width:400px;">
+        <h3>Add new expense</h3>
+        <strong><span class="help-block alert alert-success" ng-show="vm.successMessage.length > 0">{{vm.successMessage}}</span></strong>
+        <strong><span class="help-block alert alert-danger" ng-hide="vm.errorMessage.length == 0">{{vm.errorMessage}}</span></strong>
+        <fieldset class="form-group">
+            <input type="text" ng-model="vm.expense.Name" id="expenseName" class="form-control" placeholder="Add the name" title="Name" ng-class="vm.expense.isNameValid? '' : 'error'" />
+            <span class="help-block alert alert-danger" ng-hide="vm.expense.isNameValid">{{vm.expense.nameError}}</span>
+        </fieldset>
+        <fieldset class="form-group">
+            <textarea ng-model="vm.expense.Description" id="expenseDescription" type="text" class="form-control" placeholder="Add the description" title="Description" ng-class="vm.expense.isNameValid? '' : 'error'"></textarea>
+            <span class="help-block alert alert-danger" ng-hide="vm.expense.isDescriptionValid">{{vm.expense.descriptionError}}</span>
+        </fieldset>
+        <fieldset class="form-group">
+            <input ng-model="vm.expense.Ammount" type="text" id="expenseAmmount" class="form-control" placeholder="Add the ammount" title="Description" ng-class="vm.expense.isNameValid? '' : 'error'" />
+            <span class="help-block alert alert-danger" ng-hide="vm.expense.isAmmountValid">{{vm.expense.ammountError}}</span>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Create Expense" onclick="expenseName.focus()" />
+        </fieldset>
+    </form>
+</div>

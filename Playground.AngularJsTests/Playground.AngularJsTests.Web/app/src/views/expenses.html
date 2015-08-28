@@ -1,0 +1,32 @@
+﻿<h3>Expenses</h3>
+
+<div ng-controller="expensesController as vm">
+    <table class="table table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th>Expense</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Creation Date</th>
+                <th>Modification Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="e in vm.expenseItems">
+                <td>{{e.Name}}</td>
+                <td>{{e.Description}}</td>
+                <td>{{e.Ammount | currency}}</td>
+                <td>{{e.CreationDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                <td>{{e.ModificationDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                <td>
+                    <a href="#update/{{e.ExpenseId}}" title="Update expense">Edit</a>
+                </td>
+                <td>
+                    <a href="#delete/{{e.ExpenseId}}" title="Delete expense">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

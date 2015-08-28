@@ -1,0 +1,5 @@
+﻿<div ng-controller="expenseDeleteController as vm">
+    <h3>Delete expense</h3>
+    <strong><span class="help-block alert alert-success" ng-show="vm.successMessage.length > 0">{{vm.successMessage}}</span></strong>
+    <strong><span class="help-block alert alert-danger" ng-hide="vm.errorMessage.length == 0">{{vm.errorMessage}}</span></strong>
+</div>
