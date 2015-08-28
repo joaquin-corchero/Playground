@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Testing model binders</h1>
+</div>
+
+@Html.Action("Display", "SessionTest")
+<hr />
+@Html.Action("Display", "AppSetting")
+<hr />
+@Html.Action("Display", "ServerVariable")

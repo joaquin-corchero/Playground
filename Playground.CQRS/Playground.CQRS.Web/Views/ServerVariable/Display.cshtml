@@ -1,0 +1,8 @@
+﻿@model Playground.CQRS.Web.Models.ServerVariablesModel
+<div>
+    <h3>Server variables</h3>
+    @for (var i = 0; i < Model.Variables.Count; i ++ )
+    {
+        <p><strong>@Model.Variables.Keys[i]</strong>:<br/>@Model.Variables[i]</p>
+    }
+</div>
