@@ -109,7 +109,7 @@
     <Compile Include="Infrastructure\MockingDbHelper.cs" />
     <Compile Include="Infrastructure\Repositories\ProductRepositoryTests.cs" />
     <Compile Include="Infrastructure\Repositories\RepositoryBase.cs" />
-    <Compile Include="Infrastructure\TestDbAsyncQueryProvider.cs" />
+    <Compile Include="Infrastructure\TestDbAsyncEnumerable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

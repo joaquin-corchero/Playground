@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using NBehave.Spec.MSTest;
 using Playground.Async.Web.Infrastructure.Entities;
 using Playground.Async.Web.Infrastructure.Repositories;
@@ -56,7 +57,7 @@ namespace Playground.Async.Web.Tests.Infrastructure.Repositories
         protected override void Establish_context()
         {
             base.Establish_context();
-            _product = Data.Products.FirstOrDefault();
+            _product = Data.Products.LastOrDefault();
         }
 
         private void Execute(string productName)
@@ -79,6 +80,28 @@ namespace Playground.Async.Web.Tests.Infrastructure.Repositories
             Execute(Guid.NewGuid().ToString());
 
             _actual.Result.Count.ShouldEqual(0);
+        }
+    }
+
+    [TestClass]
+    public class and_adding_a_new_product : when_working_with_the_product_repository
+    {
+        private Product _product;
+        private Task<Product> _result;
+
+        private void Execute()
+        {
+            _result = _productRepository.Add(_product);
+        }
+
+        [TestMethod]
+        public void then_the_product_can_be_added()
+        {
+            _product = Product.Generate("Name", 25.25m, "This is a very long description");
+            Execute();
+
+            _products.Verify(p => p.Add(_product), Times.Once);
+            _dbContext.Verify(m => m.SaveChangesAsync(), Times.Once());
         }
     }
 }

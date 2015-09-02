@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Playground.Async.Web.Tests.Infrastructure
 {
-    internal class TestDbAsyncQueryProvider<TEntity> : IDbAsyncQueryProvider
+    public class TestDbAsyncQueryProvider<TEntity> : IDbAsyncQueryProvider
     {
         private readonly IQueryProvider _inner;
 
-        internal TestDbAsyncQueryProvider(IQueryProvider inner)
+        public TestDbAsyncQueryProvider(IQueryProvider inner)
         {
             _inner = inner;
         }
@@ -47,7 +47,7 @@ namespace Playground.Async.Web.Tests.Infrastructure
         }
     }
 
-    internal class TestDbAsyncEnumerable<T> : EnumerableQuery<T>, IDbAsyncEnumerable<T>, IQueryable<T>
+    public class TestDbAsyncEnumerable<T> : EnumerableQuery<T>, IDbAsyncEnumerable<T>, IQueryable<T>
     {
         public TestDbAsyncEnumerable(IEnumerable<T> enumerable)
             : base(enumerable)
@@ -73,7 +73,7 @@ namespace Playground.Async.Web.Tests.Infrastructure
         }
     }
 
-    internal class TestDbAsyncEnumerator<T> : IDbAsyncEnumerator<T>
+    public class TestDbAsyncEnumerator<T> : IDbAsyncEnumerator<T>
     {
         private readonly IEnumerator<T> _inner;
 
