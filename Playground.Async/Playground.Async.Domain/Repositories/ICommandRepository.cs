@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Playground.Async.Domain.Repositories
 {
@@ -8,7 +9,7 @@ namespace Playground.Async.Domain.Repositories
 
         Task<bool> Delete(T t);
 
-        Task<T> Update(T updated, int key);
+        Task<T> Update(T updated, Guid key);
 
         Task<int> SaveChanges();
     }

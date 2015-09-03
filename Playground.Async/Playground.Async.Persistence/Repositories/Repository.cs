@@ -46,12 +46,19 @@ namespace Playground.Async.Persistence.Repositories
             return t;
         }
 
-        public virtual async Task<T> Update(T updated, int key)
+        public virtual async Task<T> Update(T updated, Guid key)
         {
             if (updated == null)
-                return null;
+                throw new ArgumentNullException("No Item provided to update");
+
+            if (key == new Guid())
+                throw new ArgumentException(string.Format("Invalid Item Key passed {0}", key));
 
             T existing = await _dbSet.FindAsync(key);
+
+            if (existing == null)
+                throw new Exception(string.Format("Couldn't find the Item with Id {0}", key));
+
             if (existing != null)
                 _context.Entry(existing).CurrentValues.SetValues(updated);
 

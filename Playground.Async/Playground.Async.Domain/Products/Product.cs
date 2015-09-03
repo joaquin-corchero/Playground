@@ -22,5 +22,12 @@
         {
             return new Product(name, price, description);
         }
+
+        public void Set(string name, decimal price, string description)
+        {
+            Name = name;
+            Price = price;
+            Description = description;
+        }
     }
 }

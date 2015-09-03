@@ -9,7 +9,7 @@ namespace Playground.Async.Tests.Infrastructure.Persistence.Repositories
     public abstract class RepositoryBase : SpecBase
     {
         protected Mock<IAsyncDbContext> _dbContext = new Mock<IAsyncDbContext>();
-        protected Mock<DbSet<Domain.Products.Product>> _products;
+        protected Mock<DbSet<Domain.Products.Product>> _productsDbSet;
 
         protected override void Establish_context()
         {
@@ -20,9 +20,9 @@ namespace Playground.Async.Tests.Infrastructure.Persistence.Repositories
 
         private void InitializeDB()
         {
-            _products = MockingHelper.AsMockDbSet(Data.Products);
+            _productsDbSet = MockingHelper.AsMockDbSet(Data.Products);
 
-            _dbContext.Setup(c => c.Set<Domain.Products.Product>()).Returns(_products.Object);
+            _dbContext.Setup(c => c.Set<Domain.Products.Product>()).Returns(_productsDbSet.Object);
         }
     }
 }
