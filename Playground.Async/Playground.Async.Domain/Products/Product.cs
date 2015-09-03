@@ -1,19 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Playground.Async.Web.Infrastructure.Entities
+﻿namespace Playground.Async.Domain.Products
 {
-    public class Product
+    public class Product : AggregateRoot
     {
-        public int ProductId { get; protected set; }
 
-        [Required]
         public string Name { get; protected set; }
 
-        [Required]
         public decimal Price { get; protected set; }
 
-        [Required]
-        [StringLength(250, MinimumLength = 5, ErrorMessage = "The description has the wrong lenght 5 - 2050")]
         public string Description { get; protected set; }
 
         protected Product() { }

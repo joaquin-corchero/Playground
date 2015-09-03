@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Playground.Async.Web.Tests.Infrastructure
+namespace Playground.Async.Tests.Infrastructure.Persistence
 {
     public class TestDbAsyncQueryProvider<TEntity> : IDbAsyncQueryProvider
     {

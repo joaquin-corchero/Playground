@@ -1,7 +1,7 @@
-﻿using Playground.Async.Web.Infrastructure.Entities;
+﻿using Playground.Async.Domain.Products;
 using System.Collections.Generic;
 
-namespace Playground.Async.Web.Tests.Infrastructure
+namespace Playground.Async.Web.Tests
 {
     internal static class Data
     {

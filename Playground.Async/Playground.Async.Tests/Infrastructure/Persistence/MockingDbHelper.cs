@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 
-namespace Playground.Async.Web.Tests.Infrastructure
+namespace Playground.Async.Tests.Infrastructure.Persistence
 {
     public static class MockingHelper
     {

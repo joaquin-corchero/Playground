@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Playground.Async.Web.Tests.Controllers
+namespace Playground.Async.Tests.Web.Controllers
 {
     [TestClass]
     public abstract class when_working_with_the_product_controller : SpecBase
@@ -55,7 +55,7 @@ namespace Playground.Async.Web.Tests.Controllers
             Execute();
             var viewResult = (ViewResult)_result.Result;
             var expected = Data.Products;
-            var actual = (List<Product>)viewResult.Model;
+            var actual = (List<Domain.Products.Product>)viewResult.Model;
             actual.ShouldEqual(expected);
         }
     }

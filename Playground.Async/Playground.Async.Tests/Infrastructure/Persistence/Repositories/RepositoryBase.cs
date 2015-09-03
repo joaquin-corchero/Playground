@@ -1,15 +1,15 @@
 ﻿using Moq;
 using NBehave.Spec.MSTest;
-using Playground.Async.Web.Infrastructure;
-using Playground.Async.Web.Infrastructure.Entities;
+using Playground.Async.Domain.Products;
+using Playground.Async.Persistence;
 using System.Data.Entity;
 
-namespace Playground.Async.Web.Tests.Infrastructure.Repositories
+namespace Playground.Async.Tests.Infrastructure.Persistence.Repositories
 {
     public abstract class RepositoryBase : SpecBase
     {
         protected Mock<IAsyncDbContext> _dbContext = new Mock<IAsyncDbContext>();
-        protected Mock<DbSet<Product>> _products;
+        protected Mock<DbSet<Domain.Products.Product>> _products;
 
         protected override void Establish_context()
         {
@@ -22,7 +22,7 @@ namespace Playground.Async.Web.Tests.Infrastructure.Repositories
         {
             _products = MockingHelper.AsMockDbSet(Data.Products);
 
-            _dbContext.Setup(c => c.Set<Product>()).Returns(_products.Object);
+            _dbContext.Setup(c => c.Set<Domain.Products.Product>()).Returns(_products.Object);
         }
     }
 }

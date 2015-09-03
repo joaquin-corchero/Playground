@@ -1,9 +1,9 @@
-﻿using Playground.Async.Web.Infrastructure.Entities;
+﻿using Playground.Async.Domain.Products;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Threading.Tasks;
 
-namespace Playground.Async.Web.Infrastructure
+namespace Playground.Async.Persistence
 {
     public interface IAsyncDbContext
     {

@@ -1,23 +1,14 @@
-﻿using System;
+﻿using Playground.Async.Domain.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Playground.Async.Web.Infrastructure.Repositories
+namespace Playground.Async.Persistence.Repositories
 {
-    public interface IRepository<T> where T : class
-    {
-        Task<T> Add(T t);
-        Task<int> Count();
-        Task<int> Delete(T t);
-        Task<T> Get(int id);
-        Task<List<T>> GetAll();
-        Task<T> Update(T updated, int key);
-    }
-
-    public class Repository<T> : IRepository<T> where T : class
+    public abstract class Repository<T> : ICommandRepository<T>, IQueryRepository<T> where T : class
     {
         protected IAsyncDbContext _context;
         protected DbSet<T> _dbSet;
@@ -51,7 +42,7 @@ namespace Playground.Async.Web.Infrastructure.Repositories
         public virtual async Task<T> Add(T t)
         {
             _dbSet.Add(t);
-            await _context.SaveChangesAsync();
+
             return t;
         }
 
@@ -62,22 +53,26 @@ namespace Playground.Async.Web.Infrastructure.Repositories
 
             T existing = await _dbSet.FindAsync(key);
             if (existing != null)
-            {
                 _context.Entry(existing).CurrentValues.SetValues(updated);
-                await _context.SaveChangesAsync();
-            }
+
             return existing;
         }
 
-        public virtual async Task<int> Delete(T t)
+        public virtual async Task<bool> Delete(T t)
         {
             _dbSet.Remove(t);
-            return await _context.SaveChangesAsync();
+
+            return true;
         }
 
         public virtual async Task<int> Count()
         {
             return await _dbSet.CountAsync();
+        }
+
+        public virtual async Task<int> SaveChanges()
+        {
+            return await _context.SaveChangesAsync();
         }
     }
 }

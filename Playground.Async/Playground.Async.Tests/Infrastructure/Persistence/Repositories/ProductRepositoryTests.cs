@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NBehave.Spec.MSTest;
-using Playground.Async.Web.Infrastructure.Entities;
-using Playground.Async.Web.Infrastructure.Repositories;
+using Playground.Async.Domain.Products;
+using Playground.Async.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Playground.Async.Web.Tests.Infrastructure.Repositories
+namespace Playground.Async.Tests.Infrastructure.Persistence.Repositories
 {
     public class when_working_with_the_product_repository : RepositoryBase
     {
@@ -25,7 +25,7 @@ namespace Playground.Async.Web.Tests.Infrastructure.Repositories
     [TestClass]
     public class and_getting_all_the_products : when_working_with_the_product_repository
     {
-        private Task<List<Product>> _actual;
+        private Task<List<Domain.Products.Product>> _actual;
 
         protected override void Establish_context()
         {
@@ -51,8 +51,8 @@ namespace Playground.Async.Web.Tests.Infrastructure.Repositories
     [TestClass]
     public class and_filtering_products_by_name : when_working_with_the_product_repository
     {
-        private Task<List<Product>> _actual;
-        private Product _product;
+        private Task<List<Domain.Products.Product>> _actual;
+        private Domain.Products.Product _product;
 
         protected override void Establish_context()
         {
@@ -86,8 +86,8 @@ namespace Playground.Async.Web.Tests.Infrastructure.Repositories
     [TestClass]
     public class and_adding_a_new_product : when_working_with_the_product_repository
     {
-        private Product _product;
-        private Task<Product> _result;
+        private Domain.Products.Product _product;
+        private Task<Domain.Products.Product> _result;
 
         private void Execute()
         {
@@ -101,7 +101,6 @@ namespace Playground.Async.Web.Tests.Infrastructure.Repositories
             Execute();
 
             _products.Verify(p => p.Add(_product), Times.Once);
-            _dbContext.Verify(m => m.SaveChangesAsync(), Times.Once());
         }
     }
 }
