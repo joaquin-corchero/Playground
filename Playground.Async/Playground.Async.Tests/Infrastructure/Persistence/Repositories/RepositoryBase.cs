@@ -1,6 +1,5 @@
 ﻿using Moq;
 using NBehave.Spec.MSTest;
-using Playground.Async.Domain.Products;
 using Playground.Async.Persistence;
 using System.Data.Entity;
 
@@ -23,6 +22,8 @@ namespace Playground.Async.Tests.Infrastructure.Persistence.Repositories
             _productsDbSet = MockingHelper.AsMockDbSet(Data.Products);
 
             _dbContext.Setup(c => c.Set<Domain.Products.Product>()).Returns(_productsDbSet.Object);
+            _dbContext.Setup(c => c.Entry(It.IsAny<object>()))
+                .Callback((object entity) => { });
         }
     }
 }

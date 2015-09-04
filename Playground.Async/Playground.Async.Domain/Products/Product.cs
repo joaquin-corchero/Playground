@@ -1,7 +1,15 @@
-﻿namespace Playground.Async.Domain.Products
+﻿using System;
+using System.Runtime.CompilerServices;
+
+//To make protected internal properties available to the tests, so tests can set the Id
+[assembly: InternalsVisibleTo("Playground.Async.Tests")]
+namespace Playground.Async.Domain.Products
 {
-    public class Product : AggregateRoot
+    public class Product
     {
+        public int ProductId { get; protected internal set; }
+
+        public DateTime CreationDate { get; protected set; }
 
         public string Name { get; protected set; }
 
@@ -28,6 +36,7 @@
             Name = name;
             Price = price;
             Description = description;
+            CreationDate = DateTime.Now;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Playground.Async.Application.ViewModels
 {
     public class ProductViewModel
     {
-        public Guid ProductId { get; set; }
+        public int ProductId { get; set; }
 
         public string Name { get; set; }
 
@@ -26,7 +26,7 @@ namespace Playground.Async.Application.ViewModels
 
         private ProductViewModel(Product product)
         {
-            ProductId = product.Id;
+            ProductId = product.ProductId;
             Name = product.Name;
             Price = product.Price;
             Description = product.Description;

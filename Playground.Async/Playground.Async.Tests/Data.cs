@@ -11,15 +11,21 @@ namespace Playground.Async.Tests
             get
             {
                 if (_products == null)
-                {
-                    _products = new List<Product> {
-                        Product.Generate("First", 20, "First description"),
-                        Product.Generate("Second", 30, "Second description"),
-                        Product.Generate("Third", 40, "Third description")
-                    };
-                }
+                    GenerateProducts(5);
 
                 return _products;
+            }
+        }
+
+        private static void GenerateProducts(int numberOfProducts)
+        {
+            _products = new List<Product>();
+            for (var i = 0; i < numberOfProducts; i++)
+            {
+                var product = Product.Generate(string.Format("Product {0}", i + 1), i * 15.5m, string.Format("Description {0}", i + 1));
+                product.ProductId = i + 1;
+
+                _products.Add(product);
             }
         }
     }

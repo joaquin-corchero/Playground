@@ -2,6 +2,7 @@
 using Playground.Async.Domain.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace Playground.Async.Persistence.Repositories
 {
@@ -22,5 +23,9 @@ namespace Playground.Async.Persistence.Repositories
             return await base.FindAll(p => p.Name == name);
         }
 
+        public async override Task<Product> Get(int id)
+        {
+            return await Find(p => p.ProductId == id);
+        }
     }
 }
