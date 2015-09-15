@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WebApi.HostAuthentication", "Playground.WebApi.HostAuthentication\Playground.WebApi.HostAuthentication.csproj", "{45F78D42-E418-446C-A63C-974E00E0ED01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WebApi.MessageHandlers", "Playground.WebApi.MessageHandlers\Playground.WebApi.MessageHandlers.csproj", "{47680C5F-A1BD-4756-BFC7-9D0647830B3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WebApi.TokenBased", "Playground.WebApi.TokenBased\Playground.WebApi.TokenBased.csproj", "{3CE87DF2-9459-468F-9F84-4A046E221D65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WebApi.AuthorizationFilters", "Playground.WebApi.AuthorizationFilters\Playground.WebApi.AuthorizationFilters.csproj", "{50CFF8F7-6E74-49BF-A9AA-E69FC58443EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WebApi.RoleAuthorization", "Playground.WebApi.RoleAuthorization\Playground.WebApi.RoleAuthorization.csproj", "{EEC30ECE-D9FC-4D0D-8B73-14CF622A1F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WebApi.RequestForgery", "Playground.WebApi.RequestForgery\Playground.WebApi.RequestForgery.csproj", "{FC2FAED2-F4B6-4546-A1F1-95654DE73F44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WebApi.Versioning", "Playground.WebApi.Versioning\Playground.WebApi.Versioning.csproj", "{CD1D8BE2-0868-47C7-BD5E-6A18D324C788}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45F78D42-E418-446C-A63C-974E00E0ED01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F78D42-E418-446C-A63C-974E00E0ED01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F78D42-E418-446C-A63C-974E00E0ED01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F78D42-E418-446C-A63C-974E00E0ED01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47680C5F-A1BD-4756-BFC7-9D0647830B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47680C5F-A1BD-4756-BFC7-9D0647830B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47680C5F-A1BD-4756-BFC7-9D0647830B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47680C5F-A1BD-4756-BFC7-9D0647830B3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE87DF2-9459-468F-9F84-4A046E221D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE87DF2-9459-468F-9F84-4A046E221D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE87DF2-9459-468F-9F84-4A046E221D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE87DF2-9459-468F-9F84-4A046E221D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CFF8F7-6E74-49BF-A9AA-E69FC58443EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CFF8F7-6E74-49BF-A9AA-E69FC58443EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CFF8F7-6E74-49BF-A9AA-E69FC58443EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CFF8F7-6E74-49BF-A9AA-E69FC58443EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEC30ECE-D9FC-4D0D-8B73-14CF622A1F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC30ECE-D9FC-4D0D-8B73-14CF622A1F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC30ECE-D9FC-4D0D-8B73-14CF622A1F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC30ECE-D9FC-4D0D-8B73-14CF622A1F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2FAED2-F4B6-4546-A1F1-95654DE73F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2FAED2-F4B6-4546-A1F1-95654DE73F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2FAED2-F4B6-4546-A1F1-95654DE73F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2FAED2-F4B6-4546-A1F1-95654DE73F44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD1D8BE2-0868-47C7-BD5E-6A18D324C788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD1D8BE2-0868-47C7-BD5E-6A18D324C788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD1D8BE2-0868-47C7-BD5E-6A18D324C788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD1D8BE2-0868-47C7-BD5E-6A18D324C788}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
