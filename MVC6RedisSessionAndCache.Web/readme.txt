@@ -1,3 +1,9 @@
+Asp.net 5
+MVC 6
+Redis
+Session
+Caching
+
 On this project there is the following working:
 
 Redis for caching
