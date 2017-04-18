@@ -61,17 +61,21 @@ Theta2_grad = zeros(size(Theta2));
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
-%X * all_theta'
+
+%https://www.coursera.org/learn/machine-learning/resources/Uuxg6
+
 a1 = [ones(m, 1) X];
 z2 = a1 * Theta1';
-a2 = sigmoid(z2);
-a2 = [ones(m, 1) a2];
+a2 = [ones(m, 1) sigmoid(z2)];
 z3 = a2 * Theta2';
 h = sigmoid(z3);
 
-cost = -y .* log(h) .- (1 - y) .* log(1 - h);
 
-J = sum(sum(cost)) * 1/m;
+cost = (-y .* log(h)) .- ((1 - y) .* log(1 - h));
+
+%reg = sum(sum(sum(thetaVector .^ 2))) .* (lambda/(2 * m));
+
+J = (sum(sum(cost)) *  - 1/m);
 
 
 
