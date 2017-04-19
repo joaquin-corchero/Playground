@@ -63,7 +63,7 @@ Theta2_grad = zeros(size(Theta2));
 %
 
 %https://www.coursera.org/learn/machine-learning/resources/Uuxg6
-
+%https://www.coursera.org/learn/machine-learning/programming/AiHgN/neural-network-learning/discussions/threads/QFnrpQckEeWv5yIAC00Eog
 a1 = [ones(m, 1) X];
 z2 = a1 * Theta1';
 a2 = [ones(m, 1) sigmoid(z2)];
