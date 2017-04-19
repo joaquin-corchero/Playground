@@ -79,6 +79,8 @@ reg = ((sum(sum(theta1 .^ 2))) + (sum(sum(theta2 .^ 2)))) * (lambda/(2 * m));
 J = JUnreg + reg;
 
 %Backward propagation
+%https://www.coursera.org/learn/machine-learning/supplement/pjdBA/backpropagation-algorithm
+%under Perform forward propagation to compute
 A = ones(t, 0);
 for t = 1:m
    A(t) = X(t);
