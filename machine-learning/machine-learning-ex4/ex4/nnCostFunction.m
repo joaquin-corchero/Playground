@@ -62,29 +62,24 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
-%https://www.coursera.org/learn/machine-learning/resources/Uuxg6
-%https://www.coursera.org/learn/machine-learning/programming/AiHgN/neural-network-learning/discussions/threads/QFnrpQckEeWv5yIAC00Eog
 a1 = [ones(m, 1) X];
 z2 = a1 * Theta1';
 a2 = [ones(m, 1) sigmoid(z2)];
-z3 = a2 * Theta2';
-h = sigmoid(z3);
+a3 = sigmoid(a2 * Theta2');
+h = a3;
+
+y_matrix = eye(num_labels)(y,:);
+
+cost = (-y_matrix .* log(h)) .- ((1 - y_matrix) .* log(1 - h));
 
 
-cost = (-y .* log(h)) .- ((1 - y) .* log(1 - h));
+JUnreg = (sum(sum(cost)) *  1/m);
 
-%reg = sum(sum(sum(thetaVector .^ 2))) .* (lambda/(2 * m));
+theta1 = Theta1(:, 2:end);
+theta2 = Theta2(:, 2:end);
+reg = ((sum(sum(theta1 .^ 2))) + (sum(sum(theta2 .^ 2)))) * (lambda/(2 * m));
 
-J = (sum(sum(cost)) *  - 1/m);
-
-
-
-
-
-
-
-
-
+J = JUnreg + reg;
 
 % -------------------------------------------------------------
 
