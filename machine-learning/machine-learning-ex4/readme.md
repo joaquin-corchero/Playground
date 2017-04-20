@@ -1,3 +1,3 @@
-Tutorial for exercise
+Resources for exercise
 
-https://www.coursera.org/learn/machine-learning/programming/AiHgN/neural-network-learning/discussions/threads/QFnrpQckEeWv5yIAC00Eog
+https://www.coursera.org/learn/machine-learning/resources/Uuxg6
