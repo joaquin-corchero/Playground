@@ -79,10 +79,14 @@ reg = ((sum(sum(theta1 .^ 2))) + (sum(sum(theta2 .^ 2)))) * (lambda/(2 * m));
 J = JUnreg + reg;
 
 %Backward propagation
-d3 = a3 - y_matrix
-d2 = (d3 * theta2') .* sigmoidGradient(z2);
+d3 = a3 - y_matrix;
+d2 = (d3 * theta2) .* sigmoidGradient(z2);
 
+Delta1 = d2' * a1;
+Delta2 = d3' * a2;
 
+Theta1_grad = Delta1 * 1/m;
+Theta2_grad = Delta2 * 1/m;
 
 % -------------------------------------------------------------
 
