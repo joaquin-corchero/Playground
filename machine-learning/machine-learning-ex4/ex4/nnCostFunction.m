@@ -85,8 +85,15 @@ d2 = (d3 * theta2) .* sigmoidGradient(z2);
 Delta1 = d2' * a1;
 Delta2 = d3' * a2;
 
-Theta1_grad = Delta1 * 1/m;
-Theta2_grad = Delta2 * 1/m;
+%Regularization of the gradient
+Theta1 = Theta1(:,1) = 0;
+Theta1 = Theta1 * (lambda/m);
+
+Theta2 = Theta2(:,1) = 0;
+Theta2 = Theta2 * (lambda/m);
+
+Theta1_grad = (Delta1 * 1/m) + Theta1;
+Theta2_grad = (Delta2 * 1/m) + Theta2;
 
 % -------------------------------------------------------------
 
