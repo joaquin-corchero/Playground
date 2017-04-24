@@ -1,6 +1,8 @@
 Resources:
 - https://www.coursera.org/learn/machine-learning/resources/Uuxg6
 
+- Exercise tutorials
+https://www.coursera.org/learn/machine-learning/discussions/all/threads/m0ZdvjSrEeWddiIAC9pDDA
 
 Octave:
 - Delete only first column: size(Theta1(:, 2:end))
