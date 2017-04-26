@@ -11,7 +11,7 @@ Octave:
 - Add one row with ones to a matrix:
 	b = [2 2 2; 3 3 3; 4 4 4]
 	bb = [ones(3, 1) b]
-	?bb =	1   2   2   2
-		1   3   3   3
-		1   4   4   4
+	bb =	1   2   2   2
+			1   3   3   3
+			1   4   4   4
 	
