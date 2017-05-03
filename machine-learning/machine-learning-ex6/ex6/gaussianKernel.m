@@ -16,7 +16,10 @@ sim = 0;
 %
 %
 
+d = sumsq(x1 - x2);
+s = 2 * (sigma ^ 2);
 
+sim = exp(- d/s);
 
 
 
