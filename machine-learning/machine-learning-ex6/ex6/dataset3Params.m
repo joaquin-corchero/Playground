@@ -23,6 +23,17 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+%https://www.coursera.org/learn/machine-learning/discussions/all/threads/g2VB7po6EeWKNwpBrKr_Fw
+
+V = [0.01; 0.03; 0.1; 0.3; 1; 3; 10; 30]
+VLenghth = size(V)(1, 1);
+
+for i = 1:VLenghth
+    for z = 1:VLenghth
+      
+    end
+end
+
 
 
 
