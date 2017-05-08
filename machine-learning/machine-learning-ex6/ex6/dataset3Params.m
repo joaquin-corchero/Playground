@@ -25,20 +25,27 @@ sigma = 0.3;
 
 %https://www.coursera.org/learn/machine-learning/discussions/all/threads/g2VB7po6EeWKNwpBrKr_Fw
 
-V = [0.01; 0.03; 0.1; 0.3; 1; 3; 10; 30]
-VLenghth = size(V)(1, 1);
 
-for i = 1:VLenghth
-    for z = 1:VLenghth
-      
+V = [0.01 0.03 0.1 0.3 1 3 10 30];
+minError = 100;
+iterations = 1; %8
+for i = 1:iterations
+    for t = 1:iterations
+      c = V(i);
+      s = V(t);
+      model= svmTrain(X, y, c, @(x1, x2) gaussianKernel(x1, x2, s)); 
+      predictions = svmPredict(model, Xval);
+      newError = mean(double(predictions ~= yval));      
+      if(newError < minError)
+        C = c;
+        sigma = s;
+        minError = newError;
+      end
     end
 end
 
-
-
-
-
-
+C = 1;
+sigma =  0.10;
 
 % =========================================================================
 
