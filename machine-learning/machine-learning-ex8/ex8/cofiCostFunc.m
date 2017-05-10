@@ -50,6 +50,12 @@ X_grad = error_factor * Theta;
 
 Theta_grad = error_factor' * X;
 
+
+theta_sum = lambda/2 * (sum(sum(Theta.^2)));
+x_sum = lambda/2 * ( sum(sum(X.^2)));
+
+J =  J + theta_sum + x_sum;
+
 % =============================================================
 
 grad = [X_grad(:); Theta_grad(:)];
