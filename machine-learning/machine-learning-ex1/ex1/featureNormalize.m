@@ -37,8 +37,6 @@ for i = columns,
   X_norm(:, i) = (x - mu(:, i)) / sigma(:, i);
 end
 
-X_norm
-
 
 %mean_value = sum()/size()
 

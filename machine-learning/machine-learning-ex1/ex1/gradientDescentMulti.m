@@ -18,7 +18,15 @@ for iter = 1:num_iters
     %
 
 
-
+    x = X(:,2);
+    h = X * theta; %theta1 + (theta2 * x);
+    
+    theta1 = theta(1) - alpha * (1/m) * sum(h - y);
+    theta2 = theta(2) - alpha * (1/m) * sum((h - y).* x);
+    
+    theta = [theta1; theta2];
+    
+    J_history(iter) = computeCostMulti(X, y, theta);
 
 
 
